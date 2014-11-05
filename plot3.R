@@ -1,6 +1,6 @@
 # Read in the data
 
-d <- read.csv("./household_p_c_small.txt",sep=";")
+d <- read.csv("./household_p_c_small.txt",sep=";",stringsAsFactors=FALSE)
 d$Date <- as.Date(d$Date,format="%d/%m/%Y")
 d$Sub_metering_1 <- as.double(d$Sub_metering_1)
 d$Sub_metering_2 <- as.double(d$Sub_metering_2)
