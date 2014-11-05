@@ -1,6 +1,6 @@
 # Read in the data
 
-d <- read.csv("./household_p_c_small.txt",sep=";")
+d <- read.csv("./household_p_c_small.txt",sep=";",stringsAsFactors=FALSE)
 d$Date <- as.Date(d$Date,format="%d/%m/%Y")
 d$Global_active_power <- as.double(d$Global_active_power)
 
@@ -11,5 +11,5 @@ e$Time <- strptime(paste(as.character(e$Date),as.character(e$Time)),format="%Y-%
 # plot the histogram, output device PNG
 
 png(filename="./plot2.png")
-plot(e$Time,e$Global_active_power,type='l',xlab="",ylab="Global active power (kilowatts)",main="Global Active Power")
+plot(e$Time,e$Global_active_power,type='l',xlab="",ylab="Global active power (kilowatts)")
 dev.off()
